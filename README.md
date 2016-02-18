@@ -3,7 +3,8 @@ tomcat-8
 
 An ansible role to install tomcat 8 on Debian based distributions.
 The installation uses the packages provided with the distribution
-and does not download
+and does not download packages (.deb, .tar.gz, ...) from other
+repositories.
 
 Requirements
 ------------
