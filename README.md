@@ -1,38 +1,48 @@
-Role Name
-=========
+tomcat-8
+=======
 
-A brief description of the role goes here.
+An ansible role to install tomcat 8 on Debian based distributions.
+The installation uses the packages provided with the distribution
+and does not download
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+None
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+The  variables should be configured by the user (default values provided) :
+
+
+* ``tomcat_keystore_passphrase``: Keystore and private key passphrase (string, default: ``changeit``)
+* ``tomcat_keystore_cert_alias``: Keystore alias for the certifiage (string, default: ``tomcat``)
+* ``tomcat_default_port``: Default connector port (integer, default: ``8080``)
+* ``tomcat_default_port_ssl``: Default redirect port (integer, default: ``8443``)
+* ``tomcat_memory_size``: Tomcat memory size (string, default: ``1024m``)
+* ``tomcat_memory_permsize``: Tomcat memory PermSize (string, default: ``128m``)
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+None
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+To use the role you have to add in your playbook:
 
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
+         - osct.tomcat-8
 
 License
 -------
 
-BSD
+Apache v. 2.0
 
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+This role was created by [Marco Fargetta](http://fmarco76.github.io) at the [INFN division of Catania](http://www.ct.infn.it) for use with the federation [GrIDP](http://gridp.ct.infn.it).
