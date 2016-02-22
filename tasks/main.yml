@@ -11,6 +11,9 @@
     - "{{ jvm_package }}"
     - "{{ tomcat_package }}"
 
+- name: Make tomcat enabled
+  service: name={{ tomcat_service_name }} enabled=yes
+  tags: tomcat
 
 - name: Activate authbind for tomcat
   lineinfile: dest=/etc/default/tomcat8 line="AUTHBIND=yes" regexp="^AUTHBIND="
