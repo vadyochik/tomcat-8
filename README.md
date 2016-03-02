@@ -23,6 +23,7 @@ The  variables should be configured by the user (default values provided) :
 * ``tomcat_default_port_ssl``: Default redirect port (integer, default: ``8443``)
 * ``tomcat_memory_size``: Tomcat memory size (string, default: ``1024m``)
 * ``tomcat_memory_permsize``: Tomcat memory PermSize (string, default: ``128m``)
+* ``keystore``: Path to the keystore containing the certificates for the ssl. If undefined a self-signed certificate is generated (path, default: unassigned)
 
 Dependencies
 ------------

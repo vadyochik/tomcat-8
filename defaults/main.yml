@@ -7,14 +7,10 @@ tomcat_keystore_passphrase: 'changeit'
 tomcat_keystore_cert_alias: 'tomcat'
 
 
-# Default shutdown port
-tomcat_default_port_shutdown: 8005
 # Default connector port
 tomcat_default_port: 8080
 # Default redirect port
 tomcat_default_port_ssl: 8443
-# Default AJP port
-tomcat_default_port_ajp: 8009
 # Tomcat memory size
 tomcat_memory_size: 1024m
 # Tomcat memory PermSize

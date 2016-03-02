@@ -5,5 +5,5 @@
   tags: tomcat
 
 - name: Restart tomcat in docker
-  shell: killall -9 java ; service tomcat8 start ; echo
+  shell: killall -9 java ; systemctl start tomcat8 ; echo
   tags: tomcat
