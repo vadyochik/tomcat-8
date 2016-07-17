@@ -83,8 +83,9 @@
   replace:
     dest: /etc/tomcat8/server.xml
     regexp: 'redirectPort="\d*"'
-    replace: 'refirectPort="{{ tomcat_default_port_ssl }}"'
+    replace: 'redirectPort="{{ tomcat_default_port_ssl }}"'
   notify: "{{ 'Restart tomcat'  if ansible_virtualization_type != 'docker' else 'Restart tomcat in docker' }}"
+  when: tomcat_enable_ssl_connector
   tags: tomcat
 
 - name: Copy the keystore
@@ -117,5 +118,6 @@
                                          clientAuth="false" sslProtocol="TLS" compression="on"
                                          keystoreFile="{{ tomcat_keystore }}" keyAlias="{{ tomcat_keystore_cert_alias }}"
                                          keyPass="{{ tomcat_keystore_passphrase }}"/>
+  when: tomcat_enable_ssl_connector
   notify: "{{ 'Restart tomcat'  if ansible_virtualization_type != 'docker' else 'Restart tomcat in docker' }}"
   tags: tomcat
