@@ -15,3 +15,5 @@ tomcat_default_port_ssl: 8443
 tomcat_memory_size: 1024m
 # Tomcat memory PermSize
 tomcat_memory_permsize: 128m
+# Enable SSL listener or not
+tomcat_enable_ssl_connector: false
