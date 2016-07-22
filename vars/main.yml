@@ -19,5 +19,4 @@ tomcat_group: 'tomcat8'
 tomcat_keystore: '/etc/tomcat8/tomcat_keystore.jks'
 
 # JAVA_HOME variable for tomcat service
-tomcat_java_home: {% if jvm_package.startswith('oracle-java8') %}'/usr/lib/jvm/java-8-oracle'{% else %}'/usr/lib/jvm/default-java'{% endif %}
-
+tomcat_java_home: '{% if jvm_package.startswith("oracle-java8") %}/usr/lib/jvm/java-8-oracle{% else %}/usr/lib/jvm/default-java{% endif %}'
