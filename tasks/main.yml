@@ -20,6 +20,10 @@
   when: tomcat_default_port|int <= 1024 or tomcat_default_port_ssl|int <= 1024
   tags: tomcat
 
+- name: Set JAVA_HOME env var
+  lineinfile: dest=/etc/default/tomcat8 line="JAVA_HOME={{ tomcat_java_home }}" regexp="^JAVA_HOME="
+  tags: tomcat
+
 - name: Check authbind connection file
   stat: path=/etc/authbind/byport/{{ tomcat_default_port }}
   register: authfile

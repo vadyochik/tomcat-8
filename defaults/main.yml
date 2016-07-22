@@ -6,7 +6,6 @@ tomcat_keystore_passphrase: 'changeit'
 # Keystore alias for the certifiage
 tomcat_keystore_cert_alias: 'tomcat'
 
-
 # Default connector port
 tomcat_default_port: 8080
 # Default redirect port
@@ -17,3 +16,6 @@ tomcat_memory_size: 1024m
 tomcat_memory_permsize: 128m
 # Enable SSL listener or not
 tomcat_enable_ssl_connector: false
+
+# JVM package name. "default-jdk" - In debian Jessie this will install OpenJDK 7
+jvm_package: 'oracle-java8-set-default'
